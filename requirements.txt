@@ -5,3 +5,5 @@ openai                     # for OpenAI models (embeddings, ChatOpenAI)
 langchain-chroma           # for Chroma vector store
 langchain-core             # for prompts, chains, and messages
 streamlit                  # for the Streamlit app interface
+OpenAIEmbeddings
+ChatOpenAI
