@@ -1,0 +1,8 @@
+os
+python-dotenv==1.0.0               # for environment variable management
+langchain-community==0.0.15        # for document loaders like PyPDFDirectoryLoader
+langchain-text-splitters==0.0.10   # for text splitting like RecursiveCharacterTextSplitter
+openai==0.27.10                    # for OpenAI models (embeddings, ChatOpenAI)
+langchain-chroma==0.0.9            # for Chroma vector store
+langchain-core==0.0.200            # for prompts, chains, and messages
+streamlit==1.24.1                  # for the Streamlit app interface
