@@ -14,6 +14,10 @@ from langchain.chains import (
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.messages import HumanMessage, SystemMessage
 
+__import__('pysqlite3')  # Import pysqlite3 to replace system sqlite3
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')  # Swap pysqlite3 for sqlite3
+
 def initialize_model():
     
     """Initialize the QA model and return the QA chain."""

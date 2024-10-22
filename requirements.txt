@@ -8,3 +8,4 @@ streamlit                  # for the Streamlit app interface
 langchain_openai
 langchain
 protobuf==3.19.0
+pysqlite3-binary

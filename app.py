@@ -6,6 +6,10 @@ from agent import initialize_model, get_answer
 from langchain_core.messages import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 
+__import__('pysqlite3')  # Import pysqlite3 to replace system sqlite3
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')  # Swap pysqlite3 for sqlite3
+
 
 
 def main():
