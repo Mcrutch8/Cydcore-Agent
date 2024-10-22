@@ -1,3 +1,4 @@
+pysqlite3-binary
 python-dotenv              # for environment variable management
 langchain-community        # for document loaders like PyPDFDirectoryLoader
 langchain-text-splitters   # for text splitting like RecursiveCharacterTextSplitter
@@ -8,4 +9,3 @@ streamlit                  # for the Streamlit app interface
 langchain_openai
 langchain
 protobuf==3.19.0
-pysqlite3-binary
