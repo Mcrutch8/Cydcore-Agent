@@ -7,5 +7,4 @@ langchain-core             # for prompts, chains, and messages
 streamlit                  # for the Streamlit app interface
 langchain_openai
 langchain
-OpenAIEmbeddings
 ChatOpenAI
