@@ -1,4 +1,3 @@
-os
 python-dotenv              # for environment variable management
 langchain-community        # for document loaders like PyPDFDirectoryLoader
 langchain-text-splitters   # for text splitting like RecursiveCharacterTextSplitter
