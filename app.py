@@ -7,17 +7,15 @@ from agent import initialize_model, get_answer
 from langchain_core.messages import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 
-# Retrieve the API key from Streamlit Secrets
-api_key = st.secrets["openai_key"]
-
-# Pass the API key to a function in agent.py
-result = agent.initialize_model(api_key)
-
 
 def main():
 
     st.title("Customer Support Assistant")
     st.write("Interact with our AI-powered customer support assistant.")
+    
+    # Retrieve the API key from Streamlit Secrets
+    api_key = st.secrets["openai_key"]
+
 
     # Initialize the QA chain and chat history
     if 'qa_chain' not in st.session_state:
