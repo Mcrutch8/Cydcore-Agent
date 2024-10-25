@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import (
     create_history_aware_retriever,
@@ -36,7 +36,7 @@ def initialize_model():
     llm = ChatOpenAI(model="gpt-4", api_key=openai_key)
 
     # Create vector store
-    db = Chroma.from_documents(chunks, embeddings)
+    db = FAISS.from_documents(chunks, embeddings)
     retriever = db.as_retriever(search_kwargs={"k": 4})
 
     # Define system prompts
