@@ -9,3 +9,4 @@ langchain_openai
 langchain
 faiss-cpu            # FAISS package for CPU-based vector storage
 protobuf==3.19.0
+pypdf
