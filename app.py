@@ -14,12 +14,12 @@ def main():
     st.write("Interact with our AI-powered customer support assistant.")
     
     # Retrieve the API key from Streamlit Secrets
-    api_key = st.secrets["openai_key"]
+    my_api_key = st.secrets["openai_key"]
 
 
     # Initialize the QA chain and chat history
     if 'qa_chain' not in st.session_state:
-        st.session_state['qa_chain'] = initialize_model(api_key)
+        st.session_state['qa_chain'] = initialize_model(my_api_key)
 
     if 'chat_history' not in st.session_state:
         st.session_state['chat_history'] = []

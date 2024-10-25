@@ -14,7 +14,7 @@ from langchain.chains import (
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.messages import HumanMessage, SystemMessage
 
-def initialize_model(api_key):
+def initialize_model(my_api_key):
     
     """Initialize the QA model and return the QA chain."""
 
@@ -29,8 +29,8 @@ def initialize_model(api_key):
     chunks = text_splitter.split_documents(docs)
 
     # Initialize embeddings and language model
-    embeddings = OpenAIEmbeddings(api_key)
-    llm = ChatOpenAI(model="gpt-4", api_key=api_key)
+    embeddings = OpenAIEmbeddings(api_key=my_api_key)
+    llm = ChatOpenAI(model="gpt-4", api_key=my_api_key)
 
     # Create vector store
     db = FAISS.from_documents(chunks, embeddings)
