@@ -14,12 +14,9 @@ from langchain.chains import (
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.messages import HumanMessage, SystemMessage
 
-def initialize_model():
+def initialize_model(api_key):
     
     """Initialize the QA model and return the QA chain."""
-    # Load environment variables from a .env file
-    load_dotenv(override=True)
-    openai_key = os.getenv("openai_key")
 
     # Initialize the loader with the directory path containing the PDFs
     loader = PyPDFDirectoryLoader("data")
@@ -32,8 +29,8 @@ def initialize_model():
     chunks = text_splitter.split_documents(docs)
 
     # Initialize embeddings and language model
-    embeddings = OpenAIEmbeddings(api_key=openai_key)
-    llm = ChatOpenAI(model="gpt-4", api_key=openai_key)
+    embeddings = OpenAIEmbeddings(api_key)
+    llm = ChatOpenAI(model="gpt-4", api_key=api_key)
 
     # Create vector store
     db = FAISS.from_documents(chunks, embeddings)

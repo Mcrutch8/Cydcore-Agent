@@ -1,24 +1,28 @@
 # app.py
 
 import streamlit as st
+import agent
 import os
 from agent import initialize_model, get_answer
 from langchain_core.messages import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 
+# Retrieve the API key from Streamlit Secrets
+api_key = st.secrets["openai_key"]
+
+# Pass the API key to a function in agent.py
+result = agent.initialize_model(api_key)
 
 
 def main():
-    # Load environment variables from a .env file
-    load_dotenv(override=True)
-    openai_key = os.getenv("openai_key")
 
     st.title("Customer Support Assistant")
     st.write("Interact with our AI-powered customer support assistant.")
 
     # Initialize the QA chain and chat history
     if 'qa_chain' not in st.session_state:
-        st.session_state['qa_chain'] = initialize_model()
+        st.session_state['qa_chain'] = initialize_model(api_key)
+
     if 'chat_history' not in st.session_state:
         st.session_state['chat_history'] = []
 
