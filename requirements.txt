@@ -8,5 +8,5 @@ streamlit==1.24.0          # for the Streamlit app interface
 langchain_openai
 langchain
 faiss-cpu            # FAISS package for CPU-based vector storage
-protobuf==3.19.0
+protobuf==3.20.0
 pypdf
