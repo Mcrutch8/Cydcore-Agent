@@ -22,7 +22,7 @@ def initialize_model():
     openai_key = os.getenv("openai_key")
 
     # Initialize the loader with the directory path containing the PDFs
-    loader = PyPDFDirectoryLoader("/Users/maxcrutchfield/Desktop/Cydcor_Proj/data")
+    loader = PyPDFDirectoryLoader("data")
 
     # Load all PDFs in the directory
     docs = loader.load()
