@@ -4,7 +4,7 @@ langchain-text-splitters   # for text splitting like RecursiveCharacterTextSplit
 openai                     # for OpenAI models (embeddings, ChatOpenAI)
 langchain-chroma           # for Chroma vector store
 langchain-core             # for prompts, chains, and messages
-streamlit                  # for the Streamlit app interface
+streamlit==1.24.0          # for the Streamlit app interface
 langchain_openai
 langchain
 faiss-cpu            # FAISS package for CPU-based vector storage
