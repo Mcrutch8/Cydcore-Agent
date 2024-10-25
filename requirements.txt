@@ -7,4 +7,5 @@ langchain-core             # for prompts, chains, and messages
 streamlit                  # for the Streamlit app interface
 langchain_openai
 langchain
+faiss-cpu            # FAISS package for CPU-based vector storage
 protobuf==3.19.0
